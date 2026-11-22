@@ -1,0 +1,56 @@
+{
+  "name": "osm-ring-sampler",
+  "version": "0.1.0",
+  "description": "Concentric ring POI sampler (5-200 km) and track polyline stitcher over Overpass & Nominatim.",
+  "keywords": [
+    "openstreetmap",
+    "osm",
+    "overpass",
+    "nominatim",
+    "gis",
+    "geospatial",
+    "poi",
+    "haversine",
+    "polyline",
+    "typescript"
+  ],
+  "homepage": "https://github.com/atmoscheme/osm-ring-sampler#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atmoscheme/osm-ring-sampler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atmoscheme/osm-ring-sampler/issues"
+  },
+  "license": "MIT",
+  "author": "Roman Romanov <atmoscheme@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1"
+  }
+}
